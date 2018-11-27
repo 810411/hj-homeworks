@@ -22,7 +22,7 @@ function setCurrentPhoto() {
   currentPhoto.src = `./i/${fileNames[step]}`;
 }
 
-setCurrentPhoto(0);
+setCurrentPhoto();
 
 nextPhoto.onclick = () => {
   setCurrentPhoto(++step);
