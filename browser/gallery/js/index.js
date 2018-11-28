@@ -25,9 +25,11 @@ function setCurrentPhoto() {
 setCurrentPhoto();
 
 nextPhoto.onclick = () => {
-  setCurrentPhoto(++step);
+  step++;
+  setCurrentPhoto();
 };
 
 prevPhoto.onclick = () => {
-  setCurrentPhoto(--step);
+  step--;
+  setCurrentPhoto();
 };
