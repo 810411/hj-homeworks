@@ -14,21 +14,21 @@ Array.from(pianoKeys).forEach((pianoKey, i) => {
 
     if (event.shiftKey) {
       octave = 'lower';
-      piano.classList.add('lower');
       piano.classList.remove('middle', 'higher');
     }
 
     if (event.altKey) {
       octave = 'higher';
-      piano.classList.add('higher');
       piano.classList.remove('middle', 'lower');
     }
+
+    piano.classList.add(octave);
   });
 
-  document.addEventListener('keyup', (event) => {
+  document.addEventListener('keyup', () => {
     octave = 'middle';
-    piano.classList.add('middle');
     piano.classList.remove('higher', 'lower');
+    piano.classList.add(octave);
   });
 
   pianoKey.addEventListener('click', () => {
