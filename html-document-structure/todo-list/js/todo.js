@@ -11,10 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const removeCurrentInput = parentTypeList.removeChild(event.target.parentElement);
 
     if (parentTypeList.classList.contains('done')) {
-      removeCurrentInput.firstElementChild.removeAttribute('checked');
       undone.insertBefore(removeCurrentInput, null);
     } else {
-      removeCurrentInput.firstElementChild.setAttribute('checked', '');
       done.insertBefore(removeCurrentInput, null);
     }
   });
