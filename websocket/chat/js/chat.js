@@ -68,8 +68,10 @@ chatElems.form.addEventListener('submit', (event) => {
   const value = chatElems.input.value;
   const messageMy = chatElems.templates.messageMy.cloneNode(true);
 
-  addMessage(messageMy, value);
-  chatElems.content.appendChild(messageMy).scrollIntoView({block: "end", behavior: "smooth"});
-  connection.send(value);
-  chatElems.form.reset();
+  if (value) {
+    addMessage(messageMy, value);
+    chatElems.content.appendChild(messageMy).scrollIntoView({block: "end", behavior: "smooth"});
+    connection.send(value);
+    chatElems.form.reset();
+  }
 });
